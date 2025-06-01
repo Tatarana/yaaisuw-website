@@ -1,0 +1,23 @@
+{
+  "name": "yaaisuw-website",
+  "version": "1.0.0",
+  "description": "Official website for YAAISUW - Building intelligent solutions powered by real people and real AIs",
+  "main": "index.html",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "start": "if not exist dist (mkdir dist) && copy /Y nul dist\\output.css >nul && start index.html"
+  },
+  "keywords": [
+    "AI",
+    "startup",
+    "tech",
+    "YAAISUW",
+    "Juli.AI"
+  ],
+  "author": "YAAISUW Team",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

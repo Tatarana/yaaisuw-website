@@ -4,6 +4,8 @@ Official website for YAAISUW - Building intelligent solutions powered by real pe
 
 ## 🚀 Features
 
+- ☁️ Automatic deployment to AWS S3 with GitHub Actions
+
 - 🎨 Modern, responsive design with Tailwind CSS
 - 📱 Mobile-first approach with smooth animations
 - 🔍 SEO optimized with semantic HTML and meta tags

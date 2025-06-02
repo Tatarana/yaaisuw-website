@@ -7,8 +7,9 @@
     "clean": "if exist dist (rmdir /s /q dist) && mkdir dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
     "copy:assets": "xcopy /E /I /Y assets dist\\assets && copy /Y index.html dist\\",
+    "copy:css": "if exist dist\\output.css (copy /Y dist\\output.css .\\)",
     "prebuild": "npm run clean && if not exist dist\\assets\\images mkdir dist\\assets\\images",
-    "build": "npm run build:css && npm run copy:assets",
+    "build": "npm run build:css && npm run copy:assets && npm run copy:css",
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "start": "if not exist dist (mkdir dist) && copy /Y nul dist\\output.css >nul && start index.html"
   },

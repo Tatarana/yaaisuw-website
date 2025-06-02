@@ -4,10 +4,10 @@
   "description": "Official website for YAAISUW - Building intelligent solutions powered by real people and real AIs",
   "main": "index.html",
   "scripts": {
-    "clean": "rm -rf dist/*",
+    "clean": "if exist dist (rmdir /s /q dist) && mkdir dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "copy:assets": "ncp ./assets ./dist/assets && ncp ./index.html ./dist/index.html",
-    "prebuild": "npm run clean && mkdir -p dist/assets/images",
+    "copy:assets": "xcopy /E /I /Y assets dist\\assets && copy /Y index.html dist\\",
+    "prebuild": "npm run clean && if not exist dist\\assets\\images mkdir dist\\assets\\images",
     "build": "npm run build:css && npm run copy:assets",
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "start": "if not exist dist (mkdir dist) && copy /Y nul dist\\output.css >nul && start index.html"
